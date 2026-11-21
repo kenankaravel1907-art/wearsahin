@@ -1,7 +1,12 @@
 title: WearSahin
-description: Gençler için sokak stili giyim. Güvenli ödeme Shopier ile.
+description: Gençler için sokak stili giyim. Oversize tişört, hoodie, kargo pantolon. Güvenli ödeme Shopier ile.
 lang: tr
+url: https://kenankaravel1907-art.github.io
+baseurl: /wearsahin
+plugins:
+  - jekyll-sitemap
 exclude:
   - README.md
   - YONETIM.md
   - netlify.toml
+  - admin/
