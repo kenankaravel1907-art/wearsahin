@@ -1,0 +1,117 @@
+# WearSahin yönetim paneli ayarları (Sveltia CMS)
+backend:
+  name: github
+  repo: kenankaravel1907-art/wearsahin
+  branch: main
+  commit_messages:
+    create: "Yeni {{collection}}: {{slug}}"
+    update: "Güncellendi {{collection}}: {{slug}}"
+    delete: "Silindi {{collection}}: {{slug}}"
+    uploadMedia: "Fotoğraf yüklendi: {{path}}"
+    deleteMedia: "Fotoğraf silindi: {{path}}"
+
+site_url: https://kenankaravel1907-art.github.io/wearsahin
+display_url: https://kenankaravel1907-art.github.io/wearsahin
+logo_url: logo.svg
+
+media_folder: images/urunler
+public_folder: /images/urunler
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ---------------------------------------------------------------
+  - name: urunler
+    label: Ürünler
+    label_singular: Ürün
+    description: "Sitedeki ürünler. 'Yeni Ürün' ile ekle, fotoğrafını yükle, Shopier linkini yapıştır, Kaydet'e bas."
+    folder: _data/urunler
+    format: json
+    extension: json
+    create: true
+    delete: true
+    identifier_field: ad
+    slug: "{{ad}}"
+    summary: "{{ad}} · {{fiyat}} ₺ · {{kategori}}"
+    sortable_fields: [ad, fiyat, eklenme, sira]
+    fields:
+      - { label: "Ürün adı", name: ad, widget: string }
+      - { label: "Sitede göster", name: aktif, widget: boolean, default: true, hint: "Kapatırsan ürün siteden gizlenir ama silinmez." }
+      - label: "Kategori"
+        name: kategori
+        widget: select
+        options: ["Tişört", "Sweatshirt", "Hoodie", "Gömlek", "Ceket", "Pantolon", "Şort", "Eşofman", "Aksesuar"]
+      - { label: "Fiyat (₺)", name: fiyat, widget: number, value_type: int, min: 0 }
+      - { label: "Eski fiyat (₺)", name: eski_fiyat, widget: number, value_type: int, min: 0, required: false, hint: "İndirim varsa üstü çizili görünecek fiyat. Yoksa boş bırak." }
+      - label: "Fotoğraflar"
+        name: gorseller
+        widget: list
+        required: false
+        hint: "İlk fotoğraf kapak olur. Kare veya dikey (4:5) fotoğraf en iyi sonucu verir."
+        field: { label: "Fotoğraf", name: gorsel, widget: image }
+      - label: "Shopier ürün linki"
+        name: shopier
+        widget: string
+        required: false
+        hint: "Shopier panelinde ürünü aç, linkini kopyala ve buraya yapıştır. Boşsa 'Satın Al' yerine 'DM'den sipariş ver' görünür."
+      - label: "Bedenler"
+        name: bedenler
+        widget: select
+        multiple: true
+        required: false
+        options: ["XS", "S", "M", "L", "XL", "XXL", "28", "29", "30", "31", "32", "33", "34", "36", "38", "Standart"]
+      - label: "Etiket"
+        name: etiket
+        widget: select
+        required: false
+        options: ["YENİ", "ÇOK SATAN", "İNDİRİM", "SINIRLI SAYIDA"]
+      - { label: "Tükendi", name: tukendi, widget: boolean, default: false, hint: "Açarsan ürün görünür ama satın alınamaz." }
+      - { label: "Açıklama", name: aciklama, widget: text, required: false, hint: "Kumaş, kalıp, model bedeni gibi bilgiler." }
+      - { label: "Sıralama", name: sira, widget: number, value_type: int, required: false, hint: "Küçük sayı önde görünür. Boş bırakırsan en yeni ürün önde olur." }
+      - { label: "Eklenme tarihi", name: eklenme, widget: datetime, default: "{{now}}", required: false }
+
+  # ---------------------------------------------------------------
+  - name: ayarlar
+    label: Mağaza Ayarları
+    files:
+      - name: genel
+        label: Genel Ayarlar
+        file: _data/ayarlar.json
+        format: json
+        fields:
+          - { label: "Mağaza adı", name: magaza_adi, widget: string }
+          - { label: "Ana sayfa büyük başlık", name: hero_baslik, widget: string, hint: "Satır atlamak için | kullan. Örn: Sokak|Senin|Sahnen." }
+          - { label: "Ana sayfa açıklama", name: hero_aciklama, widget: text }
+          - { label: "Ana sayfa görseli", name: hero_gorsel, widget: image, required: false, hint: "Boşsa çizim gösterilir." }
+          - label: "Üst kayan duyurular"
+            name: duyurular
+            widget: list
+            field: { label: "Duyuru", name: duyuru, widget: string }
+          - { label: "Shopier mağaza linki", name: shopier_magaza, widget: string, required: false }
+          - { label: "Instagram linki", name: instagram, widget: string, required: false }
+          - { label: "TikTok linki", name: tiktok, widget: string, required: false }
+          - { label: "WhatsApp numarası", name: whatsapp, widget: string, required: false, hint: "Başında 90, boşluksuz. Örn: 905321234567" }
+          - { label: "E-posta", name: eposta, widget: string, required: false }
+          - { label: "Hakkımızda metni", name: hakkimizda, widget: text }
+          - label: "Sık sorulan sorular"
+            name: sss
+            widget: list
+            fields:
+              - { label: "Soru", name: soru, widget: string }
+              - { label: "Cevap", name: cevap, widget: text }
+
+  # ---------------------------------------------------------------
+  - name: sayfalar
+    label: Yasal Sayfalar
+    label_singular: Sayfa
+    folder: sayfalar
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    fields:
+      - { label: "Başlık", name: title, widget: string }
+      - { label: "Şablon", name: layout, widget: hidden, default: sayfa }
+      - { label: "Metin", name: body, widget: markdown }

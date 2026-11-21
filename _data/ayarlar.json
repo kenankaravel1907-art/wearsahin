@@ -1,0 +1,25 @@
+{
+  "magaza_adi": "WearSahin",
+  "hero_baslik": "Sokak|Senin|Sahnen.",
+  "hero_aciklama": "Oversize tişörtler, rahat hoodie'ler ve kargo pantolonlar. Kendi tarzını yansıtan parçalar, tek tıkla güvenli ödeme.",
+  "hero_gorsel": "",
+  "duyurular": [
+    "İlk drop çok yakında",
+    "Shopier ile güvenli ödeme",
+    "Kolay iade & değişim",
+    "Instagram: @wearsahin"
+  ],
+  "shopier_magaza": "",
+  "instagram": "https://instagram.com/wearsahin",
+  "tiktok": "",
+  "whatsapp": "",
+  "eposta": "",
+  "hakkimizda": "WearSahin, kendi yolunu çizen gençler için kuruldu. Şahin gibi yüksekten bakan, kalabalıkta kaybolmayan bir stil hedefliyoruz. Her parçayı rahatlık, dayanıklılık ve sokak kültürü düşünülerek seçiyoruz.",
+  "sss": [
+    { "soru": "Ödeme nasıl yapılıyor, güvenli mi?", "cevap": "Satın Al butonuna bastığında Shopier'in güvenli ödeme sayfası açılır. Kredi kartı veya banka kartıyla ödeme yapabilirsin. Kart bilgilerin bize iletilmez." },
+    { "soru": "Kargo ne zaman çıkar?", "cevap": "Siparişler genellikle 1–3 iş günü içinde kargoya verilir. Kargo takip numaran SMS veya e-posta ile gönderilir." },
+    { "soru": "Bedenimi nasıl seçerim?", "cevap": "Kalıplarımız oversize'dır. Daha dar giymek istersen bir küçük beden seçebilirsin. Emin değilsen bize yaz." },
+    { "soru": "İade ve değişim var mı?", "cevap": "Ürünü teslim aldıktan sonra 14 gün içinde, kullanılmamış ve etiketi üzerinde olmak şartıyla iade veya değişim yapabilirsin." },
+    { "soru": "Üye olmam gerekiyor mu?", "cevap": "Hayır. Shopier üzerinden üye olmadan siparişini tamamlayabilirsin." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "ad": "Örnek Ürün (silebilirsin)",
+  "aktif": false,
+  "kategori": "Tişört",
+  "fiyat": 449,
+  "eski_fiyat": null,
+  "gorseller": [],
+  "shopier": "",
+  "bedenler": ["S", "M", "L", "XL"],
+  "etiket": "YENİ",
+  "tukendi": false,
+  "aciklama": "Bu bir örnek üründür. Sitede görünmez çünkü 'Sitede göster' kapalı.",
+  "sira": null,
+  "eklenme": "2026-11-21T00:00:00.000Z"
+}

@@ -1,0 +1,4 @@
+---
+layout: null
+---
+{"urunler": {{ site.data.urunler | jsonify }}, "ayarlar": {{ site.data.ayarlar | jsonify }}}
