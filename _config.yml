@@ -4,3 +4,4 @@ lang: tr
 exclude:
   - README.md
   - YONETIM.md
+  - netlify.toml

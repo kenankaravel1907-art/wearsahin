@@ -3,8 +3,8 @@
 Gençler için sokak stili giyim mağazası. Ödemeler Shopier üzerinden alınır.
 
 ## Ürün ekleme / düzenleme
-1. `https://<site-adresi>/admin/` adresine git.
-2. **Sign In with Token** ile GitHub erişim anahtarınla giriş yap (sadece ilk seferde).
+1. Yönetim paneline git (Netlify adresi).
+2. E-posta ve şifrenle giriş yap.
 3. **Ürünler → Yeni Ürün**: adını, fiyatını, fotoğraflarını, bedenlerini ve Shopier linkini gir → **Kaydet**.
 4. Yaklaşık 1–2 dakika sonra ürün sitede görünür.
 
@@ -14,4 +14,4 @@ Gençler için sokak stili giyim mağazası. Ödemeler Shopier üzerinden alın�
 - `sayfalar/` — yasal metinler
 - `images/urunler/` — yüklenen fotoğraflar
 - `index.html`, `app.js` — vitrin tasarımı
-- `admin/` — yönetim paneli (Sveltia CMS)
+- `admin/` — yönetim paneli (Decap CMS, Netlify üzerinden)

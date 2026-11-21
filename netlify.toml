@@ -1,0 +1,6 @@
+# Netlify sadece yönetim panelini yayınlar (site GitHub Pages'te).
+# Panel dosyaları değişmedikçe Netlify yeniden derleme yapmaz (ücretsiz kredi harcanmaz).
+[build]
+  publish = "admin"
+  command = "echo panel"
+  ignore = "[ \"$CACHED_COMMIT_REF\" != \"$COMMIT_REF\" ] && git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- admin/ netlify.toml"

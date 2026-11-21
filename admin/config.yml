@@ -1,7 +1,7 @@
-# WearSahin yönetim paneli ayarları (Sveltia CMS)
+# WearSahin yönetim paneli ayarları (Decap CMS)
+locale: tr
 backend:
-  name: github
-  repo: kenankaravel1907-art/wearsahin
+  name: git-gateway
   branch: main
   commit_messages:
     create: "Yeni {{collection}}: {{slug}}"
@@ -70,7 +70,7 @@ collections:
       - { label: "Tükendi", name: tukendi, widget: boolean, default: false, hint: "Açarsan ürün görünür ama satın alınamaz." }
       - { label: "Açıklama", name: aciklama, widget: text, required: false, hint: "Kumaş, kalıp, model bedeni gibi bilgiler." }
       - { label: "Sıralama", name: sira, widget: number, value_type: int, required: false, hint: "Küçük sayı önde görünür. Boş bırakırsan en yeni ürün önde olur." }
-      - { label: "Eklenme tarihi", name: eklenme, widget: datetime, default: "{{now}}", required: false }
+      - { label: "Eklenme tarihi", name: eklenme, widget: datetime, required: false }
 
   # ---------------------------------------------------------------
   - name: ayarlar
